@@ -6,26 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Screen</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
   </head>
   <body>
+
     <!--content box-first-->
     <div class="container">
+      <!--Dividir em duas coluna-->
       <div class="content box-first">
-        <!--Dividir em duas coluna-->
         <!--first-column-->
         <div class="box-first-column">
-          <h2 class="title">Welcome Back!</h2>
+          <h2 class="title-welcome">Welcome Back!</h2>
           <p class="description">To keep connection with us</p>
           <p class="description">Please login with your personal info</p>
-          <button class="btn">sign in</button>
+          <button class="btn btn-primary">sign in</button>
           <!--first-column-->
         </div>
+
         <!--second-column-->
         <div class="box-second-column">
           <h2 class="title">create account</h2>
           <!--social-media-->
           <div class="social-media">
-            <ul>
+            <ul class="list-social-media">
               <li><a href="#">Facebook</a></li>
               <li><a href="#">Google</a></li>
               <li><a href="#">Linkedin</a></li>
@@ -33,13 +38,13 @@
           </div>
           <!--social-media-->
           <p class="description">or use your email for registration:</p>
+          <form class="form">
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button class="btn">sign up</button>
+          </form>
         </div>
-        <form class="">
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button class="btn">sign up</button>
-        </form>
         <!--second-column-->
       </div>
       <!--content box-first-->
@@ -54,6 +59,7 @@
           <button class="btn">sign up</button>
           <!--first-column-->
         </div>
+
         <!--second-column-->
         <div class="box-second-column">
           <h2 class="title">sign in to developer</h2>
@@ -76,6 +82,5 @@
       </div>
     </div>
     <!--content box-second-->
-
   </body>
 </html>

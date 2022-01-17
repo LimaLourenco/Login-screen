@@ -35,7 +35,7 @@ body {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 
-  left: 60%;
+  left: 0%;
 }
 
 .title {
@@ -83,6 +83,7 @@ body {
 .btn-primary {
   background-color: transparent;
   border: 1px solid #ffffff;
+  transition: 0.8s;
 }
 
 .btn-primary:hover {
@@ -93,6 +94,7 @@ body {
 .btn-second {
   background-color: #b60c42;
   border: 1px solid #b60c42;
+  transition: background-color 0.8s;
 }
 
 .btn-second:hover {
@@ -103,18 +105,21 @@ body {
 
 .first-content {
   display: flex;
-  display: none;
 
+}
+
+.first-content .second-column {
+  z-index: 12;
 }
 
 .first-column {
   text-align: center;
-  flex: 1 0 auto;
+  width: 40%;
   z-index: 10;
 }
 
 .second-column {
-  flex: 2 0 auto;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,6 +131,10 @@ body {
 
 .link-social-media:not(:first-child) {
   margin-left: 10px;
+}
+
+.link-social-media .item-social-media {
+  transition: background-color 0.8s;
 }
 
 .link-social-media:hover .item-social-media {  
@@ -184,10 +193,12 @@ body {
 
 .second-content .first-column {
   order: 2;
+  z-index: -1;
 }
 
 .second-content .second-column {
   order: 1;
+  z-index: -1;
 }
 
 .password {
@@ -199,4 +210,95 @@ body {
 
 .password::first-letter {
   text-transform: capitalize;
+}
+
+.sign-in-js .first-content .first-column,
+.sign-in-js .first-content .second-column
+{
+  z-index: -1;
+}
+
+.sign-in-js .second-content .first-column,
+.sign-in-js .second-content .second-column 
+{
+  z-index: 11;
+}
+
+.sign-in-js .content::before {
+  left: 60%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  animation: slidein 3s;
+}
+
+.sign-in-js .content::before {
+  animation: slideout 3s;
+}
+
+.sign-up-js .second-content .first-column,
+.sign-up-js .second-content .second-column {
+  z-index: -1;
+}
+
+.sign-up-js .first-content .first-column,
+.sign-up-js .first-content .second-column {
+  z-index: 11;
+}
+
+/* Animação CSS */
+
+@keyframes slidein {
+  form {
+    left: 0;
+    width: 40%;
+  }
+
+  25% {
+    left: 5%;
+    width: 50%;
+  }
+
+  50% {
+    left: 50%;
+    width: 60%;
+  }
+  
+  75% {
+    left: 45%;
+    width: 50%;
+  }
+
+  to {
+    left: 60%;
+    width: 40%;
+  }
+}
+
+@keyframes slideout {
+  form {
+    left: 60%;
+    width: 40%;
+  }
+
+  25% {
+    left: 45%;
+    width: 50%;
+  }
+
+  50% {
+    left: 25%;
+    width: 60%;
+  }
+  
+  75% {
+    left: 5%;
+    width: 50%;
+  }
+
+  to {
+    left: 0;
+    width: 40%;
+  }
 }

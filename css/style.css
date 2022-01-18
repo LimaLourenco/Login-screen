@@ -212,16 +212,19 @@ body {
   text-transform: capitalize;
 }
 
-.sign-in-js .first-content .first-column,
-.sign-in-js .first-content .second-column
+.sign-in-js .first-content .first-column
 {
   z-index: -1;
 }
 
-.sign-in-js .second-content .first-column,
+
 .sign-in-js .second-content .second-column 
 {
   z-index: 11;
+}
+
+.sign-in-js .second-content .first-column {
+  z-index: 13;
 }
 
 .sign-in-js .content::before {
@@ -231,10 +234,12 @@ body {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   animation: slidein 3s;
+  z-index: 12;
 }
 
-.sign-in-js .content::before {
+.sign-up-js .content::before {
   animation: slideout 3s;
+  z-index: 12;
 }
 
 .sign-up-js .second-content .first-column,
@@ -242,15 +247,74 @@ body {
   z-index: -1;
 }
 
-.sign-up-js .first-content .first-column,
+
 .sign-up-js .first-content .second-column {
   z-index: 11;
 }
 
-/* Animação CSS */
+.sign-up-js .first-content .first-column {
+  z-index: 13;
+}
 
+.sign-in-js .first-content .second-column {
+  z-index: -1;
+  position: relative;
+  animation: deslocamentoEsq 3s;
+}
+
+.sign-up-js .second-content .second-column {
+  position: relative;
+  z-index: -1;
+  animation: deslocamentoDir 3s;
+}
+
+/* Animação CSS para conteudo */
+@keyframes deslocamentoEsq {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+
+  25% {
+    left: -80px;
+    opacity: 0.5;
+  }
+
+  50% {
+    left: -100px;
+    opacity: 0.2;
+  }
+
+  to {
+    left: -110px;
+    opacity: 0;
+  }
+}
+
+@keyframes deslocamentoDir {
+  from {
+    left: 0;
+    z-index: 12;
+  }
+
+  25% {
+    left: 80px;
+  }
+
+  50% {
+    left: 100px;
+  }
+
+  to {
+    left: 110px;
+    z-index: -1;
+  }
+}
+
+
+/* Animação CSS */
 @keyframes slidein {
-  form {
+  from {
     left: 0;
     width: 40%;
   }
@@ -261,7 +325,7 @@ body {
   }
 
   50% {
-    left: 50%;
+    left: 25%;
     width: 60%;
   }
   
@@ -277,7 +341,7 @@ body {
 }
 
 @keyframes slideout {
-  form {
+  from {
     left: 60%;
     width: 40%;
   }
